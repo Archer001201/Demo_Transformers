@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Props;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,6 +21,7 @@ namespace Player
         public string targetTag;
         public GameObject copyableSign;
         public GameObject detectedCopyable;
+        public List<BaseModule> modules;
 
         private Rigidbody _rb;
         private InputControls _input;
@@ -140,6 +142,8 @@ namespace Player
                 _playerAttribute.history.Add(temp);
                 EventHandler.OnAddModuleToHistory(temp);
             }
+            
+            ChangeCurrentModule();
         }
 
         private void OnRevert(InputAction.CallbackContext context)
@@ -153,6 +157,8 @@ namespace Player
             EventHandler.OnUpdateCurrentText(_playerAttribute.currentModule);
             EventHandler.OnRemoveModuleFromHistory(removeIndex);
             EventHandler.OnUpdateClipboardText(_playerAttribute.clipboard);
+            
+            ChangeCurrentModule();
         }
 
         private void Rotation()
@@ -181,7 +187,7 @@ namespace Player
 
         private void DetectCopyableItem()
         {
-            var ray = new Ray(cameraFollowPosition.position, transform.forward);
+            var ray = new Ray(cameraFollowPosition.position, cameraFollowPosition.forward);
 
             if (Physics.Raycast(ray, out var hit, rayDetectionRange))
             {
@@ -204,6 +210,16 @@ namespace Player
             }
 
             Debug.DrawRay(ray.origin, ray.direction * rayDetectionRange, Color.red);
+        }
+
+        private void ChangeCurrentModule()
+        {
+            var newCurrentModule = _playerAttribute.currentModule;
+
+            foreach (var m in modules)
+            {
+                m.enabled = m.module == newCurrentModule;
+            }
         }
     }
 }

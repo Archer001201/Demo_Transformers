@@ -89,6 +89,15 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LeftMousePressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""0410c89a-cec2-4165-ab19-d3e77dce3fcb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -212,6 +221,17 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                     ""action"": ""Revert"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d62e87a-c415-4e7f-88a1-79eb84f5dde6"",
+                    ""path"": ""<Mouse>/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftMousePressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -227,6 +247,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
         m_Gameplay_Copy = m_Gameplay.FindAction("Copy", throwIfNotFound: true);
         m_Gameplay_Paste = m_Gameplay.FindAction("Paste", throwIfNotFound: true);
         m_Gameplay_Revert = m_Gameplay.FindAction("Revert", throwIfNotFound: true);
+        m_Gameplay_LeftMousePressed = m_Gameplay.FindAction("LeftMousePressed", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -295,6 +316,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Copy;
     private readonly InputAction m_Gameplay_Paste;
     private readonly InputAction m_Gameplay_Revert;
+    private readonly InputAction m_Gameplay_LeftMousePressed;
     public struct GameplayActions
     {
         private @InputControls m_Wrapper;
@@ -306,6 +328,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
         public InputAction @Copy => m_Wrapper.m_Gameplay_Copy;
         public InputAction @Paste => m_Wrapper.m_Gameplay_Paste;
         public InputAction @Revert => m_Wrapper.m_Gameplay_Revert;
+        public InputAction @LeftMousePressed => m_Wrapper.m_Gameplay_LeftMousePressed;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -336,6 +359,9 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
             @Revert.started += instance.OnRevert;
             @Revert.performed += instance.OnRevert;
             @Revert.canceled += instance.OnRevert;
+            @LeftMousePressed.started += instance.OnLeftMousePressed;
+            @LeftMousePressed.performed += instance.OnLeftMousePressed;
+            @LeftMousePressed.canceled += instance.OnLeftMousePressed;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -361,6 +387,9 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
             @Revert.started -= instance.OnRevert;
             @Revert.performed -= instance.OnRevert;
             @Revert.canceled -= instance.OnRevert;
+            @LeftMousePressed.started -= instance.OnLeftMousePressed;
+            @LeftMousePressed.performed -= instance.OnLeftMousePressed;
+            @LeftMousePressed.canceled -= instance.OnLeftMousePressed;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -387,5 +416,6 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
         void OnCopy(InputAction.CallbackContext context);
         void OnPaste(InputAction.CallbackContext context);
         void OnRevert(InputAction.CallbackContext context);
+        void OnLeftMousePressed(InputAction.CallbackContext context);
     }
 }

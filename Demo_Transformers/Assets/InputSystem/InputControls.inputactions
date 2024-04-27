@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Thrust",
+                    "type": "Button",
+                    "id": "dd68c57f-385f-4fd5-96fb-d4dda81b3b67",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -204,10 +213,21 @@
                     "name": "",
                     "id": "8d62e87a-c415-4e7f-88a1-79eb84f5dde6",
                     "path": "<Mouse>/press",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "LeftMousePressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b1fcdc99-951b-48e6-afd9-4ed1dc18b073",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Thrust",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

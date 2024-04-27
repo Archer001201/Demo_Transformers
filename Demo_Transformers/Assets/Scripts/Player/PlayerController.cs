@@ -24,7 +24,7 @@ namespace Player
         public List<BaseModule> modules;
 
         private Rigidbody _rb;
-        private InputControls _input;
+        public InputControls inputControls;
         private Vector2 _look;
         private Vector2 _move;
         private float _rotationX;
@@ -48,12 +48,12 @@ namespace Player
 
         private void OnEnable()
         {
-            _input.Enable();
+            inputControls.Enable();
         }
 
         private void OnDisable()
         {
-            _input.Disable();
+            inputControls.Disable();
         }
 
         private void Update()
@@ -70,16 +70,16 @@ namespace Player
 
         private void SetInputControls()
         {
-            _input = new InputControls();
-            _input.Gameplay.Look.performed += OnLook;
-            _input.Gameplay.Move.performed += OnMovePerformed;
-            _input.Gameplay.Move.canceled += OnMoveCanceled;
-            _input.Gameplay.Jump.performed += OnJump;
-            _input.Gameplay.Scan.performed += OnCtrlPressed;
-            _input.Gameplay.Scan.canceled += OnCtrlReleased;
-            _input.Gameplay.Copy.performed += OnCopy;
-            _input.Gameplay.Paste.performed += OnPaste;
-            _input.Gameplay.Revert.performed += OnRevert;
+            inputControls = new InputControls();
+            inputControls.Gameplay.Look.performed += OnLook;
+            inputControls.Gameplay.Move.performed += OnMovePerformed;
+            inputControls.Gameplay.Move.canceled += OnMoveCanceled;
+            inputControls.Gameplay.Jump.performed += OnJump;
+            inputControls.Gameplay.Scan.performed += OnCtrlPressed;
+            inputControls.Gameplay.Scan.canceled += OnCtrlReleased;
+            inputControls.Gameplay.Copy.performed += OnCopy;
+            inputControls.Gameplay.Paste.performed += OnPaste;
+            inputControls.Gameplay.Revert.performed += OnRevert;
         }
 
         private void OnLook(InputAction.CallbackContext value)
@@ -99,7 +99,11 @@ namespace Player
 
         private void OnJump(InputAction.CallbackContext context)
         {
-            if (isGrounded) _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            if (isGrounded)
+            {
+                _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                Debug.Log("jump");
+            }
         }
 
         private void OnCtrlPressed(InputAction.CallbackContext context)
@@ -173,6 +177,7 @@ namespace Player
             transform.Rotate(Vector3.up * mouseX);
             
             _look = Vector2.zero;
+            _rb.angularVelocity = Vector3.zero;
         }
 
         private void Move()

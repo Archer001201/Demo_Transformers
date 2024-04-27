@@ -8,27 +8,27 @@ namespace Player
     {
         public Module module;
         protected InputControls inputControls;
-        private PlayerController _playerController;
+        protected PlayerController playerController;
 
         protected virtual void Awake()
         {
-            _playerController = GetComponent<PlayerController>();
+            playerController = GetComponent<PlayerController>();
             inputControls = new InputControls();
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             inputControls.Enable();
         }
 
-        private void OnDisable()
+        protected virtual  void OnDisable()
         {
             inputControls.Disable();
         }
 
         private void Start()
         {
-            _playerController.modules.Add(this);
+            playerController.modules.Add(this);
             enabled = false;
         }
     }

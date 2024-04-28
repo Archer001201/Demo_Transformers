@@ -79,12 +79,14 @@ namespace Player
         {
             if (_grabCoroutine != null) return;
             _grabCoroutine = StartCoroutine(GrabTargetItem());
+            _lockedTarget.GetComponent<Rigidbody>().useGravity = false;
         }
 
         private void StopGrab(InputAction.CallbackContext context)
         {
             if (_grabCoroutine == null) return;
             StopCoroutine(_grabCoroutine);
+            _lockedTarget.GetComponent<Rigidbody>().useGravity = true;
             _grabCoroutine = null;
             _lockedTarget = null;
         }

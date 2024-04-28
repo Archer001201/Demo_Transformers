@@ -7,7 +7,7 @@ namespace Props
     {
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Destroyable"))
+            if (other.CompareTag("Destroyable") || other.CompareTag("Enemy"))
             {
                 Destroy(other.gameObject);
             }

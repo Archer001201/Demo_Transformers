@@ -6,11 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="fd347040-d003-4564-aae0-7c210c5dacc8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Demo_Transformers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Demo_Transformers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/MagnetModule.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MagnetModule.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/MagneticItem.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MagneticItem.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DoorTrigger.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DoorTrigger.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/MagnetModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/MagnetModule.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/Projectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/ProjectileDestroyable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/ProjectileDestroyable.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
@@ -25,9 +26,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/FirepowerModule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerAttribute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/BattleField.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/MagneticTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/Projectile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/ProjectileDestroyable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Enums.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/EventHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/ModulePanelController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -109,7 +110,8 @@
       <updated>1714173819750</updated>
       <workItem from="1714173823285" duration="14514000" />
       <workItem from="1714193229346" duration="6759000" />
-      <workItem from="1714239370266" duration="14094000" />
+      <workItem from="1714239370266" duration="14356000" />
+      <workItem from="1714340681363" duration="1148000" />
     </task>
     <servers />
   </component>

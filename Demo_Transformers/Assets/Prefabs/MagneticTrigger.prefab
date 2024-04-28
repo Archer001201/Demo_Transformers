@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3493701410191888214}
   - component: {fileID: 3493701410191888213}
   m_Layer: 0
-  m_Name: DoorTrigger
+  m_Name: MagneticTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

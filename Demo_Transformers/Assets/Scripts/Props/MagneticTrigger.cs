@@ -10,7 +10,7 @@ namespace Props
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("MagneticItem"))
+            if (other.CompareTag("Magnetic"))
             {
                 onTriggeredEvent?.Invoke();
             }

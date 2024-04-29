@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DataSO;
 using Props;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -18,10 +19,11 @@ namespace Player
         public bool isGrounded;
         public bool isScanning;
         public float rayDetectionRange = 20f;
-        public string targetTag;
         public GameObject copyableSign;
         public GameObject detectedCopyable;
+        public GameObject detectedSavingPoint;
         public List<BaseModule> modules;
+        public LevelDataSO levelData;
 
         private Rigidbody _rb;
         public InputControls inputControls;
@@ -80,6 +82,7 @@ namespace Player
             inputControls.Gameplay.Copy.performed += OnCopy;
             inputControls.Gameplay.Paste.performed += OnPaste;
             inputControls.Gameplay.Revert.performed += OnRevert;
+            inputControls.Gameplay.Interact.performed += OnInteract;
         }
 
         private void OnLook(InputAction.CallbackContext value)
@@ -120,9 +123,11 @@ namespace Player
 
         private void OnCopy(InputAction.CallbackContext context)
         {
-            if (detectedCopyable == null || !isScanning) return;
+            if (detectedCopyable == null || !isScanning || _playerAttribute.energy < 1) return;
             _playerAttribute.clipboard = detectedCopyable.GetComponent<CopyableItem>().module;
             EventHandler.OnUpdateClipboardText(_playerAttribute.clipboard);
+            EventHandler.OnUpdateAttributePanel(Attribute.Energy, false);
+            _playerAttribute.energy--;
         }
 
         private void OnPaste(InputAction.CallbackContext context)
@@ -135,7 +140,7 @@ namespace Player
             EventHandler.OnUpdateCurrentText(_playerAttribute.currentModule);
             EventHandler.OnUpdateClipboardText(_playerAttribute.clipboard);
             
-            if (_playerAttribute.history.Count >= 3)
+            if (_playerAttribute.history.Count >= levelData.historyRecords)
             {
                 _playerAttribute.history.RemoveAt(0);
                 EventHandler.OnRemoveModuleFromHistory(0);
@@ -163,6 +168,14 @@ namespace Player
             EventHandler.OnUpdateClipboardText(_playerAttribute.clipboard);
             
             ChangeCurrentModule();
+        }
+
+        private void OnInteract(InputAction.CallbackContext context)
+        {
+            if (detectedSavingPoint != null)
+            {
+                detectedSavingPoint.GetComponent<SavingPoint>().SaveAndRecover();
+            }
         }
 
         private void Rotation()
@@ -197,7 +210,8 @@ namespace Player
             if (Physics.Raycast(ray, out var hit, rayDetectionRange))
             {
                 var detectedObj = hit.collider.gameObject;
-                if (detectedObj.CompareTag(targetTag))
+                
+                if (detectedObj.CompareTag("Copyable"))
                 {
                     copyableSign.SetActive(true);
                     detectedCopyable = detectedObj;
@@ -207,11 +221,22 @@ namespace Player
                     copyableSign.SetActive(false);
                     detectedCopyable = null;
                 }
+
+
+                if (detectedObj.CompareTag("SavingPoint"))
+                {
+                    detectedSavingPoint = detectedObj;
+                }
+                else
+                {
+                    detectedSavingPoint = null;
+                }
             }
             else
             {
                 copyableSign.SetActive(false);
                 detectedCopyable = null;
+                detectedSavingPoint = null;
             }
 
             Debug.DrawRay(ray.origin, ray.direction * rayDetectionRange, Color.red);

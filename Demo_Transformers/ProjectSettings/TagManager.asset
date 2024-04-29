@@ -8,6 +8,7 @@ TagManager:
   - Destroyable
   - Magnetic
   - Enemy
+  - SavingPoint
   layers:
   - Default
   - TransparentFX

@@ -107,6 +107,15 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""b82f0efe-c93e-4b6d-a4e9-a468aaa78395"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -252,6 +261,17 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
                     ""action"": ""Thrust"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1464d821-4c0c-4bfb-a003-b79062535747"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -269,6 +289,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
         m_Gameplay_Revert = m_Gameplay.FindAction("Revert", throwIfNotFound: true);
         m_Gameplay_LeftMousePressed = m_Gameplay.FindAction("LeftMousePressed", throwIfNotFound: true);
         m_Gameplay_Thrust = m_Gameplay.FindAction("Thrust", throwIfNotFound: true);
+        m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -339,6 +360,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Revert;
     private readonly InputAction m_Gameplay_LeftMousePressed;
     private readonly InputAction m_Gameplay_Thrust;
+    private readonly InputAction m_Gameplay_Interact;
     public struct GameplayActions
     {
         private @InputControls m_Wrapper;
@@ -352,6 +374,7 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
         public InputAction @Revert => m_Wrapper.m_Gameplay_Revert;
         public InputAction @LeftMousePressed => m_Wrapper.m_Gameplay_LeftMousePressed;
         public InputAction @Thrust => m_Wrapper.m_Gameplay_Thrust;
+        public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -388,6 +411,9 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
             @Thrust.started += instance.OnThrust;
             @Thrust.performed += instance.OnThrust;
             @Thrust.canceled += instance.OnThrust;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -419,6 +445,9 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
             @Thrust.started -= instance.OnThrust;
             @Thrust.performed -= instance.OnThrust;
             @Thrust.canceled -= instance.OnThrust;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -447,5 +476,6 @@ public partial class @InputControls: IInputActionCollection2, IDisposable
         void OnRevert(InputAction.CallbackContext context);
         void OnLeftMousePressed(InputAction.CallbackContext context);
         void OnThrust(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

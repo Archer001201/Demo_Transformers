@@ -4,4 +4,9 @@ namespace Utilities
     {
         Empty, Firepower, Magnet, Thruster
     }
+
+    public enum Attribute
+    {
+        Health, Energy
+    }
 }

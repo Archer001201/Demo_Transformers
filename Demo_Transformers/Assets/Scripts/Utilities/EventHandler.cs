@@ -39,5 +39,12 @@ namespace Utilities
         {
             removeModuleFromHistory?.Invoke(index);
         }
+
+        public static Action<Attribute, bool> updateAttributePanel;
+
+        public static void OnUpdateAttributePanel(Attribute attribute, bool isAdding)
+        {
+            updateAttributePanel?.Invoke(attribute, isAdding);
+        }
     }
 }

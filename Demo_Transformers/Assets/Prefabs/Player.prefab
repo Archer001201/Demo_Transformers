@@ -146,10 +146,11 @@ MonoBehaviour:
   isGrounded: 0
   isScanning: 0
   rayDetectionRange: 8
-  targetTag: Copyable
+  canSaveData: 0
   copyableSign: {fileID: 2104073358107468852}
   detectedCopyable: {fileID: 0}
   modules: []
+  levelData: {fileID: 11400000, guid: 021aa8193f15246958b33e62e7e8f146, type: 2}
 --- !u!114 &2104073357128865135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea63ec5ae1cbe4152878e34071ecb75e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 3
+  energy: 3
   currentModule: 0
   clipboard: 0
   history: 

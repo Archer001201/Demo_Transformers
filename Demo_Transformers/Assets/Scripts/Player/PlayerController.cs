@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using DataSO;
 using Props;
@@ -24,6 +25,7 @@ namespace Player
         public GameObject detectedSavingPoint;
         public List<BaseModule> modules;
         public LevelDataSO levelData;
+        public bool canJump;
 
         private Rigidbody _rb;
         public InputControls inputControls;
@@ -51,11 +53,13 @@ namespace Player
         private void OnEnable()
         {
             inputControls.Enable();
+            EventHandler.enableJump += OnEnableJump;
         }
 
         private void OnDisable()
         {
             inputControls.Disable();
+            EventHandler.enableJump -= OnEnableJump;
         }
 
         private void Update()
@@ -83,6 +87,13 @@ namespace Player
             inputControls.Gameplay.Paste.performed += OnPaste;
             inputControls.Gameplay.Revert.performed += OnRevert;
             inputControls.Gameplay.Interact.performed += OnInteract;
+            inputControls.Gameplay.Esc.performed += context =>
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            };
+            
+            inputControls.Enable();
         }
 
         private void OnLook(InputAction.CallbackContext value)
@@ -176,6 +187,12 @@ namespace Player
             {
                 detectedSavingPoint.GetComponent<SavingPoint>().SaveAndRecover();
             }
+        }
+
+        private void OnEnableJump(bool result)
+        {
+            if (result) inputControls.Gameplay.Jump.Enable();
+            else inputControls.Gameplay.Jump.Disable();
         }
 
         private void Rotation()

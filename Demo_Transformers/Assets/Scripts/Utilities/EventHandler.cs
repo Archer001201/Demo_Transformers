@@ -46,5 +46,12 @@ namespace Utilities
         {
             updateAttributePanel?.Invoke(attribute, isAdding);
         }
+
+        public static Action<bool> enableJump;
+
+        public static void OnEnableJump(bool enabled)
+        {
+            enableJump?.Invoke(enabled);
+        }
     }
 }

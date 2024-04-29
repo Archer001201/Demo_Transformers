@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2104073357128865135}
   - component: {fileID: 2104073357128865104}
   - component: {fileID: 2104073357128865106}
-  - component: {fileID: 2104073357128865105}
+  - component: {fileID: 7814300658295519442}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -146,11 +146,12 @@ MonoBehaviour:
   isGrounded: 0
   isScanning: 0
   rayDetectionRange: 8
-  canSaveData: 0
   copyableSign: {fileID: 2104073358107468852}
   detectedCopyable: {fileID: 0}
+  detectedSavingPoint: {fileID: 0}
   modules: []
   levelData: {fileID: 11400000, guid: 021aa8193f15246958b33e62e7e8f146, type: 2}
+  canJump: 0
 --- !u!114 &2104073357128865135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +202,7 @@ MonoBehaviour:
   grabPosition: {fileID: 2104073357736326170}
   rayDetectionRange: 30
   target: {fileID: 0}
---- !u!114 &2104073357128865105
+--- !u!114 &7814300658295519442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,9 +215,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   module: 0
-  liftSpeed: 3
+  liftSpeed: 5
   isThrusting: 0
-  hoverDuration: 1.5
+  hoverDuration: 3
 --- !u!1 &2104073357162448116
 GameObject:
   m_ObjectHideFlags: 0

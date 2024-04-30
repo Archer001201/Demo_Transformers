@@ -32,7 +32,7 @@ namespace Player
                 if (Physics.Raycast(ray, out var hit, rayDetectionRange))
                 {
                     var detectedObj = hit.collider.gameObject;
-                    if (detectedObj.CompareTag("Magnetic"))
+                    if (detectedObj.CompareTag("MagneticCube") || detectedObj.CompareTag("MagneticSphere"))
                     {
                         target = detectedObj;
                     }

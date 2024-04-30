@@ -9,6 +9,8 @@ TagManager:
   - Magnetic
   - Enemy
   - SavingPoint
+  - MagneticCube
+  - MagneticSphere
   layers:
   - Default
   - TransparentFX

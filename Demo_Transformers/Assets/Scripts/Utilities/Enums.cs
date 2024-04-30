@@ -9,4 +9,9 @@ namespace Utilities
     {
         Health, Energy
     }
+
+    public enum MagneticType
+    {
+        MagneticCube, MagneticSphere
+    }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3493701410191888214}
   - component: {fileID: 3493701410191888213}
   m_Layer: 0
-  m_Name: MagneticTrigger
+  m_Name: SphereTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2147,3 +2147,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  type: 1

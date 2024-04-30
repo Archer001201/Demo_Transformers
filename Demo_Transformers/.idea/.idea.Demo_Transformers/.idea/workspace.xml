@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fd347040-d003-4564-aae0-7c210c5dacc8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Demo_Transformers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Demo_Transformers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MagneticSphere.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MagneticSphere.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MagneticTrigger.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MagneticTrigger.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/MagnetModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/MagnetModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/MagneticTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/MagneticTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Enums.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +27,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/BattleField.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/MagneticTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/PlayerEnterTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/Projectile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/SavingPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Enums.cs" root0="FORCE_HIGHLIGHTING" />
@@ -129,7 +126,7 @@
       <workItem from="1714411444141" duration="4996000" />
       <workItem from="1714420514112" duration="1677000" />
       <workItem from="1714422649403" duration="707000" />
-      <workItem from="1714423629824" duration="1980000" />
+      <workItem from="1714423629824" duration="6605000" />
     </task>
     <servers />
   </component>

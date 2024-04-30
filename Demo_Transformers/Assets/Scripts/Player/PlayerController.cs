@@ -25,7 +25,7 @@ namespace Player
         public GameObject detectedSavingPoint;
         public List<BaseModule> modules;
         public LevelDataSO levelData;
-        public bool canJump;
+        // public bool canJump;
 
         private Rigidbody _rb;
         public InputControls inputControls;
@@ -87,12 +87,6 @@ namespace Player
             inputControls.Gameplay.Paste.performed += OnPaste;
             inputControls.Gameplay.Revert.performed += OnRevert;
             inputControls.Gameplay.Interact.performed += OnInteract;
-            inputControls.Gameplay.Esc.performed += context =>
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            };
-            
             inputControls.Enable();
         }
 
@@ -134,11 +128,19 @@ namespace Player
 
         private void OnCopy(InputAction.CallbackContext context)
         {
-            if (detectedCopyable == null || !isScanning || _playerAttribute.energy < 1) return;
+            if (detectedCopyable == null || !isScanning) return;
             _playerAttribute.clipboard = detectedCopyable.GetComponent<CopyableItem>().module;
             EventHandler.OnUpdateClipboardText(_playerAttribute.clipboard);
-            EventHandler.OnUpdateAttributePanel(Attribute.Energy, false);
-            _playerAttribute.energy--;
+            if (_playerAttribute.energy > 0)
+            {
+                EventHandler.OnUpdateAttributePanel(Attribute.Energy, false);
+                _playerAttribute.energy--;
+            }
+            else
+            {
+                EventHandler.OnUpdateAttributePanel(Attribute.Health, false);
+                _playerAttribute.health--;
+            }
         }
 
         private void OnPaste(InputAction.CallbackContext context)

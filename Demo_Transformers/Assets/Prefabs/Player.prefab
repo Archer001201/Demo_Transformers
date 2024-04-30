@@ -169,6 +169,7 @@ MonoBehaviour:
   currentModule: 0
   clipboard: 0
   history: 
+  levelData: {fileID: 11400000, guid: 021aa8193f15246958b33e62e7e8f146, type: 2}
 --- !u!114 &2104073357128865104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,9 +216,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   module: 0
-  liftSpeed: 5
-  isThrusting: 0
-  hoverDuration: 3
+  isGliding: 0
+  thrusterJumpForce: 0
+  fallingSpeed: 0
 --- !u!1 &2104073357162448116
 GameObject:
   m_ObjectHideFlags: 0

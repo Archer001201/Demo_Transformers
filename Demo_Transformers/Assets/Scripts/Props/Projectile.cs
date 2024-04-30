@@ -5,9 +5,10 @@ namespace Props
 {
     public class Projectile : MonoBehaviour
     {
-        private void OnTriggerEnter(Collider other)
+        private void OnCollisionEnter(Collision other)
         {
-            if (other.CompareTag("Destroyable") || other.CompareTag("Enemy"))
+            if (other.gameObject.CompareTag("Destroyable") || 
+                other.gameObject.CompareTag("Enemy"))
             {
                 Destroy(other.gameObject);
             }

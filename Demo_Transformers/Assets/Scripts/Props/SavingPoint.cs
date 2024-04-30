@@ -11,6 +11,8 @@ namespace Props
 {
     public class SavingPoint : MonoBehaviour
     {
+        public int maxHealth = 3;
+        public int maxEnergy = 1;
         public UnityEvent onAfterSavingEvent;
         public LevelDataSO levelData;
         private PlayerAttribute _playerAttribute;
@@ -26,10 +28,12 @@ namespace Props
         public void SaveAndRecover()
         {
             levelData.playerPosition = _playerAttribute.transform.position;
-            var healthDelta = levelData.maxHealth - _playerAttribute.health;
-            var energyDelta = levelData.maxEnergy - _playerAttribute.energy;
-            _playerAttribute.health = levelData.maxHealth;
-            _playerAttribute.energy = levelData.maxEnergy;
+            var healthDelta = maxHealth - _playerAttribute.health;
+            var energyDelta = maxEnergy - _playerAttribute.energy;
+            // _playerAttribute.health = levelData.health;
+            // _playerAttribute.energy = levelData.energy;
+            _playerAttribute.health = maxHealth;
+            _playerAttribute.energy = maxEnergy;
             _playerAttribute.currentModule = Module.Empty;
             EventHandler.updateCurrentText(_playerAttribute.currentModule);
             _playerAttribute.clipboard = Module.Empty;
@@ -48,6 +52,7 @@ namespace Props
                 EventHandler.updateAttributePanel(Attribute.Energy, true);
             }
             _playerController.ChangeCurrentModule();
+            levelData.hasSavedData = true;
             onAfterSavingEvent?.Invoke();
         }
     }

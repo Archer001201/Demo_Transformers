@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6281777071362804468}
   - component: {fileID: 5690958893382208908}
   m_Layer: 0
-  m_Name: Door_2
+  m_Name: DestroaybaleDoor
   m_TagString: Destroyable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

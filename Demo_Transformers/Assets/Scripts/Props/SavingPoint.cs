@@ -14,10 +14,13 @@ namespace Props
         public UnityEvent onAfterSavingEvent;
         public LevelDataSO levelData;
         private PlayerAttribute _playerAttribute;
+        private PlayerController _playerController;
 
         private void Awake()
         {
-            _playerAttribute = GameObject.FindWithTag("Player").GetComponent<PlayerAttribute>();
+            var player = GameObject.FindWithTag("Player");
+            _playerAttribute = player.GetComponent<PlayerAttribute>();
+            _playerController = player.GetComponent<PlayerController>();
         }
 
         public void SaveAndRecover()
@@ -44,6 +47,7 @@ namespace Props
             {
                 EventHandler.updateAttributePanel(Attribute.Energy, true);
             }
+            _playerController.ChangeCurrentModule();
             onAfterSavingEvent?.Invoke();
         }
     }

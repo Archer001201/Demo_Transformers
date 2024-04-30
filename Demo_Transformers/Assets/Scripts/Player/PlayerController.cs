@@ -259,7 +259,7 @@ namespace Player
             Debug.DrawRay(ray.origin, ray.direction * rayDetectionRange, Color.red);
         }
 
-        private void ChangeCurrentModule()
+        public void ChangeCurrentModule()
         {
             var newCurrentModule = _playerAttribute.currentModule;
 

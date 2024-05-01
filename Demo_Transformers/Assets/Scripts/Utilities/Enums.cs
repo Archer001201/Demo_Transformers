@@ -14,4 +14,9 @@ namespace Utilities
     {
         MagneticCube, MagneticSphere
     }
+
+    public enum MovingType
+    {
+        MoveDown, MoveToDestination
+    }
 }

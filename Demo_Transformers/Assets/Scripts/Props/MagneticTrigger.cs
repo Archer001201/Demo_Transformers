@@ -7,14 +7,23 @@ namespace Props
 {
     public class MagneticTrigger : MonoBehaviour
     {
-        public UnityEvent onTriggeredEvent;
+        public UnityEvent onTriggerEnterEvent;
+        public UnityEvent onTriggerExitEvent;
         public MagneticType type;
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag(type.ToString()))
             {
-                onTriggeredEvent?.Invoke();
+                onTriggerEnterEvent?.Invoke();
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag(type.ToString()))
+            {
+                onTriggerExitEvent?.Invoke();
             }
         }
     }

@@ -11,6 +11,7 @@ TagManager:
   - SavingPoint
   - MagneticCube
   - MagneticSphere
+  - Movable
   layers:
   - Default
   - TransparentFX

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using DataSO;
 using UnityEngine;
 using Utilities;
+using Attribute = Utilities.Attribute;
+using EventHandler = Utilities.EventHandler;
 
 namespace Player
 {
@@ -19,6 +21,14 @@ namespace Player
         private void Start()
         {
             levelData.LoadLevelData();
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            if (!other.gameObject.CompareTag("EnergySupply")) return;
+            Destroy(other.gameObject);
+            energy++;
+            EventHandler.OnUpdateAttributePanel(Attribute.Energy, true);
         }
     }
 }

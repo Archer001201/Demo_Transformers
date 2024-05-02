@@ -12,6 +12,7 @@ TagManager:
   - MagneticCube
   - MagneticSphere
   - Movable
+  - EnergySupply
   layers:
   - Default
   - TransparentFX

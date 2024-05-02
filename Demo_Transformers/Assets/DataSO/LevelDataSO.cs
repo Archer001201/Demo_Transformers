@@ -41,7 +41,7 @@ namespace DataSO
             }
             else
             {
-                historyRecords = 1;
+                historyRecords = 2;
             }
         }
     }

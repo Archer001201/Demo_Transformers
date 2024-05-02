@@ -25,7 +25,8 @@ namespace Player
         public GameObject detectedSavingPoint;
         public List<BaseModule> modules;
         public LevelDataSO levelData;
-        // public bool canJump;
+        public float fallingThreshold;
+        public bool isFallingHurt;
 
         private Rigidbody _rb;
         public InputControls inputControls;
@@ -65,13 +66,27 @@ namespace Player
         private void Update()
         {
             DetectCopyableItem();
+            if (!isGrounded && _rb.velocity.y < fallingThreshold) isFallingHurt = true;
         }
 
         private void FixedUpdate()
         {
             Rotation();
             Move();
-            isGrounded = Physics.CheckSphere(playerBase.position, 0.5f, groundLayer);
+            if (Physics.CheckSphere(playerBase.position, 0.5f, groundLayer))
+            {
+                isGrounded = true;
+                if (isFallingHurt)
+                {
+                    _playerAttribute.health--;
+                    EventHandler.OnUpdateAttributePanel(Attribute.Health, false);
+                    isFallingHurt = false;
+                }
+            }
+            else
+            {
+                isGrounded = false;
+            }
         }
 
         private void SetInputControls()
@@ -175,10 +190,10 @@ namespace Player
             var removeIndex = history.Count - 1;
             _playerAttribute.currentModule = history[^1];
             _playerAttribute.history.RemoveAt(removeIndex);
-            _playerAttribute.clipboard = Module.Empty;
+            // _playerAttribute.clipboard = Module.Empty;
             EventHandler.OnUpdateCurrentText(_playerAttribute.currentModule);
             EventHandler.OnRemoveModuleFromHistory(removeIndex);
-            EventHandler.OnUpdateClipboardText(_playerAttribute.clipboard);
+            // EventHandler.OnUpdateClipboardText(_playerAttribute.clipboard);
             
             ChangeCurrentModule();
         }

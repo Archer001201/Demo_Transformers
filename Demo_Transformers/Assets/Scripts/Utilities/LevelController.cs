@@ -15,7 +15,7 @@ namespace Utilities
 
         public void QuitGame()
         {
-            
+            Application.Quit();
         }
 
         public void ClearData()

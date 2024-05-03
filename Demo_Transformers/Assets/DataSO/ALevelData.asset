@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ALevelData
   m_EditorClassIdentifier: 
   playerPosition: {x: 43.149376, y: -13, z: 39.529606}
-  historyRecords: 2
+  historyRecords: 3
   hasSavedData: 0

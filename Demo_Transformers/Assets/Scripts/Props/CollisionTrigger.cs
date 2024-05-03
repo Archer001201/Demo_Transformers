@@ -8,11 +8,12 @@ namespace Props
     {
         public UnityEvent onCollisionEnterEvent;
         public UnityEvent onCollisionExitEvent;
+        public string targetTag;
         public GameObject target;
         
         private void OnCollisionEnter(Collision other)
         {
-            if (other.gameObject == target)
+            if (other.gameObject == target || other.gameObject.CompareTag(targetTag))
             {
                 onCollisionEnterEvent?.Invoke();
             }
@@ -20,7 +21,7 @@ namespace Props
 
         private void OnCollisionExit(Collision other)
         {
-            if (other.gameObject == target)
+            if (other.gameObject == target || other.gameObject.CompareTag(targetTag))
             {
                 onCollisionExitEvent?.Invoke();
             }

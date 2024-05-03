@@ -13,6 +13,7 @@ TagManager:
   - MagneticSphere
   - Movable
   - EnergySupply
+  - RollingBall
   layers:
   - Default
   - TransparentFX

@@ -30,5 +30,11 @@ namespace Player
             energy++;
             EventHandler.OnUpdateAttributePanel(Attribute.Energy, true);
         }
+
+        public void TakeDamage()
+        {
+            health--;
+            EventHandler.OnUpdateAttributePanel(Attribute.Health, false);
+        }
     }
 }

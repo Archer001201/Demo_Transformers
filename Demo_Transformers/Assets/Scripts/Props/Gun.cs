@@ -14,8 +14,8 @@ namespace Props
         private Coroutine _fireCoroutine;
         public bool canMove;
         private Rigidbody _rb;
-        public Vector3 position1;
-        public Vector3 position2;
+        public Transform position1;
+        public Transform position2;
         public bool isPosition1;
         public float speed;
         public Vector3 destination;
@@ -31,7 +31,7 @@ namespace Props
             {
                 return;
             }
-            destination = isPosition1 ? position1 : position2;
+            destination = isPosition1 ? position1.position : position2.position;
             // 计算每帧移动的向量
             var moveAmount = speed * Time.fixedDeltaTime;
             // 计算新位置，向目标位置移动

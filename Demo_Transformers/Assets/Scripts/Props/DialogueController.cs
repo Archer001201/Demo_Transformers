@@ -52,7 +52,7 @@ namespace Props
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.CompareTag("Player")) return;
+            if (!other.CompareTag("Player") || dialogueList.Count < 1) return;
             dialogueCanvas.SetActive(true);
             canTalk = true;
         }

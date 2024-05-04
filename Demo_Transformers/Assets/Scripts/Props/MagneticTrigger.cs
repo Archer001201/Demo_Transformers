@@ -16,7 +16,7 @@ namespace Props
             if (other.CompareTag(type.ToString()))
             {
                 onTriggerEnterEvent?.Invoke();
-                Debug.Log("Enter");
+                // Debug.Log("Enter");
             }
         }
 
@@ -25,7 +25,7 @@ namespace Props
             if (other.CompareTag(type.ToString()))
             {
                 onTriggerExitEvent?.Invoke();
-                Debug.Log("Exit");
+                // Debug.Log("Exit");
             }
         }
     }

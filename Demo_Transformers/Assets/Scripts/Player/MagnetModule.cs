@@ -15,6 +15,7 @@ namespace Player
         public GameObject target;
         private Coroutine _grabCoroutine;
         private GameObject _lockedTarget;
+        public GameObject grabSign;
         
         protected override void Awake()
         {
@@ -22,10 +23,12 @@ namespace Player
             module = Module.Magnet;
             inputControls.Gameplay.LeftMousePressed.performed += StartGrab;
             inputControls.Gameplay.LeftMousePressed.canceled += StopGrab;
+            grabSign.SetActive(false);
         }
 
         private void Update()
         {
+            grabSign.SetActive(target != null && _lockedTarget == null);
             if (_lockedTarget == null)
             {
                 var ray = new Ray(rayStartPosition.position, rayStartPosition.forward);

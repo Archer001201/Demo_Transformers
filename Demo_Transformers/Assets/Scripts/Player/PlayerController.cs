@@ -22,7 +22,7 @@ namespace Player
         public float rayDetectionRange = 20f;
         public GameObject copyableSign;
         public GameObject detectedCopyable;
-        public GameObject detectedSavingPoint;
+        // public GameObject detectedSavingPoint;
         public List<BaseModule> modules;
         public LevelDataSO levelData;
         public float fallingThreshold;
@@ -104,7 +104,7 @@ namespace Player
             inputControls.Gameplay.Copy.performed += OnCopy;
             inputControls.Gameplay.Paste.performed += OnPaste;
             inputControls.Gameplay.Revert.performed += OnRevert;
-            inputControls.Gameplay.Interact.performed += OnInteract;
+            // inputControls.Gameplay.Interact.performed += OnInteract;
             inputControls.Enable();
         }
 
@@ -201,13 +201,13 @@ namespace Player
             ChangeCurrentModule();
         }
 
-        private void OnInteract(InputAction.CallbackContext context)
-        {
-            if (detectedSavingPoint != null)
-            {
-                detectedSavingPoint.GetComponent<SavingPoint>().SaveAndRecover();
-            }
-        }
+        // private void OnInteract(InputAction.CallbackContext context)
+        // {
+        //     if (detectedSavingPoint != null)
+        //     {
+        //         detectedSavingPoint.GetComponent<SavingPoint>().SaveAndRecover();
+        //     }
+        // }
 
         private void OnEnableJump(bool result)
         {
@@ -268,13 +268,13 @@ namespace Player
                     detectedCopyable = null;
                 }
 
-                detectedSavingPoint = detectedObj.CompareTag("SavingPoint") ? detectedObj : null;
+                // detectedSavingPoint = detectedObj.CompareTag("SavingPoint") ? detectedObj : null;
             }
             else
             {
                 copyableSign.SetActive(false);
                 detectedCopyable = null;
-                detectedSavingPoint = null;
+                // detectedSavingPoint = null;
             }
 
             Debug.DrawRay(ray.origin, ray.direction * rayDetectionRange, Color.red);

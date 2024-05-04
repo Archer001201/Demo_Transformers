@@ -17,12 +17,38 @@ namespace Props
         public LevelDataSO levelData;
         private PlayerAttribute _playerAttribute;
         private PlayerController _playerController;
+        public GameObject hud;
+        private Transform _cameraTrans;
 
         private void Awake()
         {
             var player = GameObject.FindWithTag("Player");
             _playerAttribute = player.GetComponent<PlayerAttribute>();
             _playerController = player.GetComponent<PlayerController>();
+            hud.SetActive(false);
+            _cameraTrans = GameObject.FindWithTag("MainCamera").transform;
+        }
+
+        private void Update()
+        {
+            if (hud.activeSelf)
+            {
+                hud.transform.LookAt(_cameraTrans);
+                hud.transform.Rotate(0,180,0);
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!other.CompareTag("Player")) return;
+            hud.SetActive(true);
+            SaveAndRecover();
+        }
+        
+        private void OnTriggerExit(Collider other)
+        {
+            if (!other.CompareTag("Player")) return;
+            hud.SetActive(false);
         }
 
         public void SaveAndRecover()

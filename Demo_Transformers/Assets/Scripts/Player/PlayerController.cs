@@ -27,6 +27,7 @@ namespace Player
         public LevelDataSO levelData;
         public float fallingThreshold;
         public bool isFallingHurt;
+        public Camera mainCamera;
 
         private Rigidbody _rb;
         public InputControls inputControls;
@@ -41,6 +42,7 @@ namespace Player
             _playerAttribute = GetComponent<PlayerAttribute>();
             copyableSign.SetActive(false);
             SetInputControls();
+            mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         }
 
         private void Start()
@@ -67,6 +69,7 @@ namespace Player
         {
             DetectCopyableItem();
             if (!isGrounded && _rb.velocity.y < fallingThreshold) isFallingHurt = true;
+            if (!isGrounded && _rb.velocity.y < fallingThreshold*2) EventHandler.OnGameOver();
         }
 
         private void FixedUpdate()
@@ -125,7 +128,7 @@ namespace Player
             if (isGrounded)
             {
                 _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-                Debug.Log("jump");
+                // Debug.Log("jump");
             }
         }
 
@@ -239,12 +242,21 @@ namespace Player
 
         private void DetectCopyableItem()
         {
-            var ray = new Ray(cameraFollowPosition.position, cameraFollowPosition.forward);
+            // 获取层的索引
+            var playerLayer = LayerMask.NameToLayer("Player");
+            var uiLayer = LayerMask.NameToLayer("Ignore Raycast");
 
-            if (Physics.Raycast(ray, out var hit, rayDetectionRange))
+            // 创建一个 LayerMask，其中玩家层和UI层都被忽略
+            int layerMask = ~( (1 << playerLayer) | (1 << uiLayer) );
+
+            // 从摄像机的屏幕中心位置发射一条射线，忽略玩家层和UI层
+            var ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+
+            if (Physics.Raycast(ray, out var hit, rayDetectionRange, layerMask))
             {
                 var detectedObj = hit.collider.gameObject;
-                
+                // Debug.Log(detectedObj.name);
+
                 if (detectedObj.CompareTag("Copyable"))
                 {
                     copyableSign.SetActive(true);
@@ -256,15 +268,7 @@ namespace Player
                     detectedCopyable = null;
                 }
 
-
-                if (detectedObj.CompareTag("SavingPoint"))
-                {
-                    detectedSavingPoint = detectedObj;
-                }
-                else
-                {
-                    detectedSavingPoint = null;
-                }
+                detectedSavingPoint = detectedObj.CompareTag("SavingPoint") ? detectedObj : null;
             }
             else
             {

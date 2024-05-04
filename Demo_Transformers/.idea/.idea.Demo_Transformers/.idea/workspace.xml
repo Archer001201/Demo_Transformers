@@ -6,14 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="fd347040-d003-4564-aae0-7c210c5dacc8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Demo_Transformers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Demo_Transformers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DataSO/LevelDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DataSO/LevelDataSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MagneticSphere.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MagneticSphere.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CopyableCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CopyableCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CopyableItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CopyableItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MainCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MainCanvas.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectile.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/Gun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/Gun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/FirepowerModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/FirepowerModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/EnemyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/MagneticTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/MagneticTrigger.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/MovableItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/MovableItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/EventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/EventHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +37,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/BattleField.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/CollisionTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/DialogueController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/GameOverPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/Gun.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/MagneticTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/MovableItem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -39,6 +46,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/Projectile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/RollingBall.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/SavingPoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/Water.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Enums.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/EventHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/LevelController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -139,7 +147,8 @@
       <workItem from="1714423629824" duration="1980000" />
       <workItem from="1714499420644" duration="13956000" />
       <workItem from="1714696697589" duration="10018000" />
-      <workItem from="1714765375488" duration="2620000" />
+      <workItem from="1714765375488" duration="4480000" />
+      <workItem from="1714790449698" duration="6696000" />
     </task>
     <servers />
   </component>

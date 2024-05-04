@@ -53,5 +53,12 @@ namespace Utilities
         {
             enableJump?.Invoke(enabled);
         }
+
+        public static Action gameOver;
+
+        public static void OnGameOver()
+        {
+            gameOver?.Invoke();
+        }
     }
 }

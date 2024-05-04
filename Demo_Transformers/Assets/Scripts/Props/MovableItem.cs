@@ -68,6 +68,7 @@ namespace Props
                 _rb.velocity = Vector3.zero;
                 moveSpeed = 0;  // 重置速度为0，以便下次使用时重新设置
                 onArrivedDestinationEvent?.Invoke();
+                // Debug.Log("destination");
             }
         }
 

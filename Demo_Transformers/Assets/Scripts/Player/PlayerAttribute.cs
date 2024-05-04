@@ -35,6 +35,7 @@ namespace Player
         {
             health--;
             EventHandler.OnUpdateAttributePanel(Attribute.Health, false);
+            if (health < 1) EventHandler.OnGameOver();
         }
     }
 }

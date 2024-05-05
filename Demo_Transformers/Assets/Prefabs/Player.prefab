@@ -221,6 +221,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   playerBase: {fileID: 2104073357162448117}
+  baseRadius: 0.2
   isGrounded: 0
   isScanning: 0
   rayDetectionRange: 8
@@ -231,6 +232,7 @@ MonoBehaviour:
   fallingThreshold: -12
   isFallingHurt: 0
   mainCamera: {fileID: 0}
+  originalMaterial: {fileID: 2100000, guid: 83de6145f158f48dfa19dbffa985cba8, type: 2}
 --- !u!114 &2104073357128865135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   module: 0
+  moduleMaterial: {fileID: 2100000, guid: a5e19ae7a72be47879c98596c587f520, type: 2}
   projectilePrefab: {fileID: 756918990074633952, guid: 7ac7691122195439e8a558a6347226c8,
     type: 3}
   firePosition: {fileID: 2104073357128865129}
@@ -279,6 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   module: 0
+  moduleMaterial: {fileID: 2100000, guid: d86e7d2a70ec84bc58a49ccbbb64e54a, type: 2}
   rayStartPosition: {fileID: 2104073357813218448}
   grabPosition: {fileID: 2104073357736326170}
   rayDetectionRange: 30
@@ -297,6 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   module: 0
+  moduleMaterial: {fileID: 2100000, guid: e7de3eb9bbd52436a813809c4dde1ad8, type: 2}
   isGliding: 0
   thrusterJumpForce: 12
   fallingSpeed: -2

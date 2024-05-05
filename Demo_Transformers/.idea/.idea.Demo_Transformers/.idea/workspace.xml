@@ -6,15 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="fd347040-d003-4564-aae0-7c210c5dacc8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Demo_Transformers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Demo_Transformers/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CopyableCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CopyableCanvas.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CopyableItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CopyableItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnergySupply.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnergySupply.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MainCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MainCanvas.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SavingPoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SavingPoint.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TriggeredDoor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TriggeredDoor.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/MagnetModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/MagnetModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/BaseModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/BaseModule.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/DialogueController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/DialogueController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/MagneticTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/MagneticTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/SavingPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/SavingPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +146,7 @@
       <workItem from="1714499420644" duration="13956000" />
       <workItem from="1714696697589" duration="10018000" />
       <workItem from="1714765375488" duration="4480000" />
-      <workItem from="1714790449698" duration="8420000" />
+      <workItem from="1714790449698" duration="13035000" />
     </task>
     <servers />
   </component>

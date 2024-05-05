@@ -9,6 +9,8 @@ namespace Player
         public Module module;
         protected InputControls inputControls;
         protected PlayerController playerController;
+        public Material moduleMaterial;
+        // public Material originalMaterial;
 
         protected virtual void Awake()
         {

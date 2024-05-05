@@ -2018,7 +2018,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5F53\u524D\u6A21\u5757"
+  m_text: "\u6267\u884C\u6A21\u7EC4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 15610c0daa49c4548b57bf8c8e12050b, type: 2}
   m_sharedMaterial: {fileID: 9155431443864798697, guid: 15610c0daa49c4548b57bf8c8e12050b,

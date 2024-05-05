@@ -17,6 +17,7 @@ namespace Player
         public float jumpForce = 5f;
         public LayerMask groundLayer;
         public Transform playerBase;
+        public float baseRadius;
         public bool isGrounded;
         public bool isScanning;
         public float rayDetectionRange = 20f;
@@ -35,6 +36,8 @@ namespace Player
         private Vector2 _move;
         private float _rotationX;
         private PlayerAttribute _playerAttribute;
+        private MeshRenderer _meshRenderer;
+        public Material originalMaterial;
 
         private void Awake()
         {
@@ -43,6 +46,7 @@ namespace Player
             copyableSign.SetActive(false);
             SetInputControls();
             mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+            _meshRenderer = GetComponent<MeshRenderer>();
         }
 
         private void Start()
@@ -76,7 +80,7 @@ namespace Player
         {
             Rotation();
             Move();
-            if (Physics.CheckSphere(playerBase.position, 0.5f, groundLayer))
+            if (Physics.CheckSphere(playerBase.position, baseRadius, groundLayer))
             {
                 isGrounded = true;
                 if (isFallingHurt)
@@ -90,6 +94,12 @@ namespace Player
             {
                 isGrounded = false;
             }
+        }
+        
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red; // 设置颜色为红色，你也可以选择其他颜色
+            Gizmos.DrawWireSphere(playerBase.position, baseRadius); // 在场景中绘制一个半径为0.5的球体
         }
 
         private void SetInputControls()
@@ -156,8 +166,7 @@ namespace Player
             }
             else
             {
-                EventHandler.OnUpdateAttributePanel(Attribute.Health, false);
-                _playerAttribute.health--;
+                _playerAttribute.TakeDamage();
             }
         }
 
@@ -283,11 +292,15 @@ namespace Player
         public void ChangeCurrentModule()
         {
             var newCurrentModule = _playerAttribute.currentModule;
+            var material = originalMaterial;
 
             foreach (var m in modules)
             {
                 m.enabled = m.module == newCurrentModule;
+                if (m.enabled) material = m.moduleMaterial;
             }
+
+            _meshRenderer.material = material;
         }
     }
 }

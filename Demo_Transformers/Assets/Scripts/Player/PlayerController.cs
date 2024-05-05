@@ -85,8 +85,7 @@ namespace Player
                 isGrounded = true;
                 if (isFallingHurt)
                 {
-                    _playerAttribute.health--;
-                    EventHandler.OnUpdateAttributePanel(Attribute.Health, false);
+                    _playerAttribute.TakeDamage();
                     isFallingHurt = false;
                 }
             }

@@ -69,14 +69,37 @@ namespace Props
                 _playerAttribute.history.RemoveAt(i);
                 EventHandler.removeModuleFromHistory(i);
             }
-            for (var i = 0; i < healthDelta; i++)
+
+            if (healthDelta > 0)
             {
-                EventHandler.updateAttributePanel(Attribute.Health, true);
+                for (var i = 0; i < healthDelta; i++)
+                {
+                    EventHandler.updateAttributePanel(Attribute.Health, true);
+                } 
             }
-            for (var i = 0; i < energyDelta; i++)
+            else
             {
-                EventHandler.updateAttributePanel(Attribute.Energy, true);
+                for (var i = 0; i < Mathf.Abs(healthDelta); i++)
+                {
+                    EventHandler.updateAttributePanel(Attribute.Health, false);
+                } 
             }
+
+            if (energyDelta > 0)
+            {
+                for (var i = 0; i < energyDelta; i++)
+                {
+                    EventHandler.updateAttributePanel(Attribute.Energy, true);
+                } 
+            }
+            else
+            {
+                for (var i = 0; i < Mathf.Abs(energyDelta); i++)
+                {
+                    EventHandler.updateAttributePanel(Attribute.Energy, false);
+                } 
+            }
+           
             _playerController.ChangeCurrentModule();
             levelData.hasSavedData = true;
             onAfterSavingEvent?.Invoke();

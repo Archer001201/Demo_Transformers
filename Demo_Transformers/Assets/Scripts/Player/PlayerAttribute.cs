@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Cinemachine;
 using DataSO;
 using UnityEngine;
 using Utilities;
@@ -17,6 +18,12 @@ namespace Player
         public List<Module> history;
         public LevelDataSO levelData;
         // public int historyAmount = 1;
+        private CinemachineImpulseSource _impulseSource;
+
+        private void Awake()
+        {
+            _impulseSource = GetComponent<CinemachineImpulseSource>();
+        }
 
         private void Start()
         {
@@ -35,6 +42,7 @@ namespace Player
         {
             health--;
             EventHandler.OnUpdateAttributePanel(Attribute.Health, false);
+            _impulseSource.GenerateImpulseWithForce(0.3f);
             if (health < 1) EventHandler.OnGameOver();
         }
     }
